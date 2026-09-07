@@ -28,4 +28,15 @@ class User {
         $result->execute($data);
         return $this->db->lastInsertId();
     }
+
+    public function updateUser(int $id, array $data): bool {
+        $result = $this->db->prepare("UPDATE users SET first_name=:first_name, last_name=:last_name, email=:email, password_hash=:password_hash, role=:role WHERE id=:id");
+        return $result->execute(array_merge($data, ['id' => $id]));
+    }
+
+    public function deleteUser(int $id): bool {
+        $result = $this->db->prepare("DELETE FROM users WHERE id=:id");
+        $result->execute(['id' => $id]);
+        return $result->rowCount() > 0;
+    }
 }

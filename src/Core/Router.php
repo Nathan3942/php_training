@@ -25,7 +25,7 @@ class Router {
             $controller->{$handler[1]}();
         } else {
             http_response_code(404);
-            echo "404 Not Found";
+            echo "404 Not Found\n";
         }
     }
 }
