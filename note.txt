@@ -1,0 +1,8 @@
+
+conposer equivalent npm
+
+php -S 0.0.0.0:8000 -t public
+
+
+
+requete sql passer par prepare des que il y a une variable pour eviter les injection sql

@@ -1,0 +1,12 @@
+{
+    "name": "nathan3942/php_training",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
