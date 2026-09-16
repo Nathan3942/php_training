@@ -1,9 +1,10 @@
 <?php
 namespace App\Controllers;
 
+use App\Core\View;
 
 class HomeController {
     public function index(): void {
-        echo "Welcome to the Home Page!\n";
+        View::render('home', ['title' => 'Bienvenue dans mon projet Training PHP']);
     }
 }

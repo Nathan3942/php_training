@@ -39,4 +39,10 @@ class User {
         $result->execute(['id' => $id]);
         return $result->rowCount() > 0;
     }
+
+    public function findByEmail(string $email): ?array {
+        $result = $this->db->prepare("SELECT * FROM users WHERE email=:email");
+        $result->execute(['email' => $email]);
+        return $result->fetch(PDO::FETCH_ASSOC) ?: null;
+    }
 }
